@@ -1,0 +1,15 @@
+# Python virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# SQLite database
+tasks.db
+
+# Temporary Microsoft Word files
+~$*
+
+# Local ZIP archive
+task_api_sqlite.zip

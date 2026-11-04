@@ -11,14 +11,52 @@ A CRUD to-do API. Tasks are stored in a **SQLite** database (`tasks.db`), so dat
 `tasks.db` is created **automatically** in the project folder (next to `main.py`) the first time the app starts. The `tasks` table is also created automatically, and three example tasks are inserted only when the table is empty.
 
 ## How to start the project
-```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload
+## How to start the project using VS Code
+
+1. Clone the repository from GitHub.
+2. Open VS Code.
+3. Select **File → Open Folder** and open the project folder.
+4. Open the integrated terminal using **Terminal → New Terminal**.
+5. Create a virtual environment:
+
+   ```powershell
+   python -m venv venv
+   ```
+
+6. Activate the virtual environment:
+
+   ```powershell
+   .\venv\Scripts\Activate.ps1
+   ```
+
+7. Install the project dependencies:
+
+   ```powershell
+   python -m pip install -r requirements.txt
+   ```
+
+8. Start the FastAPI server:
+
+   ```powershell
+   python -m uvicorn main:app --reload
+   ```
+
+9. Open the API documentation in your browser:
+
+   http://127.0.0.1:8000/docs
+
+**Automatic database creation:** When the application starts for the first time, it automatically creates `tasks.db`, creates the `tasks` table, and inserts three example tasks if the table is empty.
+
+### Starting the project after initial setup
+
+After completing the initial setup, open the project in VS Code, open its integrated terminal, activate the virtual environment, and run:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+python -m uvicorn main:app --reload
 ```
+
+
 Open http://127.0.0.1:8000/docs for the interactive Swagger UI.
 
 ## Endpoints
